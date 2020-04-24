@@ -6,19 +6,6 @@ import server.Server;
 
 public class Survival {
 	public int npc;
-	//
-	// public int mobsAlive = 0;
-	// public boolean gameStarted = false;
-	//
-	// public void process() {
-	// if(!gameStarted) {
-	//
-	// }
-	// }
-// 63 red spider
-//1633 pyrefiend
-//1218
-//1587 moss giant
 	private final int[][] easyWAVES = { { 1265, 1265, 1265, 1265, 1265 }, { 74, 74, 74, 74, 74 },
 			{ 75, 75, 75, 75, 75 }, { 1153, 1153, 1153, 1153, 1153 }, { 76, 76, 76, 76, 76 }, 
 			{ 63, 63, 63, 63, 63 }, { 1218, 1218, 1218, 1218, 1218 }, { 1633, 1633, 1633, 1633, 1633 }, 

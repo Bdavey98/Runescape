@@ -1,0 +1,15 @@
+# ignore all batch files
+*.bat
+
+# ignore characters
+123.txt
+daehogel.txt
+mod maxime.txt
+dae.txt
+
+# ignore class files
+*.class
+Acheron Client/2. Compile.bat
+Acheron Client/3. Run.bat
+Acheron Client/sign/singlink Compiler.bat
+Acheron Source/Data/ChatLogs/daehogel.txt

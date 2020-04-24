@@ -1241,7 +1241,9 @@ break;
 		case 13618:
 			c.getPA().resetSurvival();
 			if(!c.hasCollected)
+				if(c.survivalKilled != -1){
 				c.survivalPoints += c.survivalKilled;
+				}
 				c.getPA().movePlayer(2750,9638, 0);
 		break;
 		
@@ -2520,6 +2522,7 @@ break;
 
 			case 1699:
 				c.getShops().openShop(91);
+				c.sendMessage("You currently have " + c.survivalPoints + " survival points." );
 				break;
 
 			case 1282:

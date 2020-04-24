@@ -12,8 +12,8 @@ Jailed = false
 Black-marks = 0
 
 [POSITIONS]
-character-posx = 2750
-character-posy = 9638
+character-posx = 2752
+character-posy = 9641
 character-height = 0
 
 [POINTS]
@@ -24,7 +24,7 @@ pk-points = 0
 dungPoints = 0
 magePoints = 0
 votingPoints = 0
-survivalPoints = 210
+survivalPoints = 375
 
 [KILL AND DEATH]
 KC = 5
@@ -57,15 +57,15 @@ character-robe bottom = 1000
 character-leather body = 1000
 character-chaps = 1000
 magic-book = 0
-brother-info = 0	0
+brother-info = 0	2
 brother-info = 1	0
 brother-info = 2	0
 brother-info = 3	0
-brother-info = 4	0
+brother-info = 4	2
 brother-info = 5	0
-special-amount = 2.5
+special-amount = 10.0
 selected-coffin = 0
-barrows-killcount = 0
+barrows-killcount = 10
 teleblock-length = 0
 gwdelay = 0
 summonSpec0
@@ -78,7 +78,7 @@ totalstored = 0
 autoRet = 1
 trade11 = 0
 SpeDelay = 0
-barrowskillcount = 0
+barrowskillcount = 10
 flagged = false
 Rules = false
 shopping = false
@@ -121,12 +121,12 @@ character-look = 11	0
 character-look = 12	0
 
 [SKILLS]
-character-skill = 0	90	5426800
+character-skill = 0	103	5426800
 character-skill = 1	90	5463100
-character-skill = 2	80	2067000
-character-skill = 3	60	4316231
+character-skill = 2	91	2901600
+character-skill = 3	88	4594283
 character-skill = 4	1	0
-character-skill = 5	21	55680
+character-skill = 5	44	55680
 character-skill = 6	1	0
 character-skill = 7	1	0
 character-skill = 8	1	0
@@ -138,7 +138,7 @@ character-skill = 13	1	0
 character-skill = 14	1	0
 character-skill = 15	1	0
 character-skill = 16	1	0
-character-skill = 17	1	0
+character-skill = 17	20	4800
 character-skill = 18	1	0
 character-skill = 19	1	0
 character-skill = 20	1	0
@@ -148,11 +148,32 @@ character-skill = 23	1	0
 character-skill = 24	1	0
 
 [ITEMS]
-character-item = 18	230	1
-character-item = 19	230	1
+character-item = 0	146	1
+character-item = 1	158	1
+character-item = 2	996	48530
+character-item = 3	2435	1
+character-item = 4	2435	1
+character-item = 5	2435	1
+character-item = 6	2435	1
+character-item = 7	144	1
+character-item = 8	230	1
+character-item = 9	15310	1
+character-item = 10	2444	1
+character-item = 11	15314	1
+character-item = 13	316	1
+character-item = 14	316	1
+character-item = 15	316	1
+character-item = 16	316	1
+character-item = 17	316	1
+character-item = 18	316	1
+character-item = 19	316	1
+character-item = 20	316	1
+character-item = 21	316	1
+character-item = 22	316	1
+character-item = 23	316	1
 
 [BANK]
-character-bank = 0	996	13473922
+character-bank = 0	996	13323922
 character-bank = 1	533	18
 character-bank = 2	555	1000
 character-bank = 3	556	1000
@@ -165,8 +186,8 @@ character-bank = 9	883	500
 character-bank = 10	392	498
 character-bank = 11	380	1497
 character-bank = 12	6909	1
-character-bank = 13	146	12
-character-bank = 14	158	12
+character-bank = 13	146	11
+character-bank = 14	158	11
 character-bank = 15	912	1
 character-bank = 16	1068	1
 character-bank = 17	1154	1

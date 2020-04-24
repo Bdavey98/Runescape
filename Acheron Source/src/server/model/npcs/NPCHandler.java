@@ -2025,8 +2025,8 @@ npcs[i].actionTimer = 7;
 				if(npcs[i].spawnedBy > 0) { // delete summons npc
 					if(Server.playerHandler.players[npcs[i].spawnedBy] == null
 					|| Server.playerHandler.players[npcs[i].spawnedBy].heightLevel != npcs[i].heightLevel	
-					|| Server.playerHandler.players[npcs[i].spawnedBy].respawnTimer > 0 
-					|| !Server.playerHandler.players[npcs[i].spawnedBy].goodDistance(npcs[i].getX(), npcs[i].getY(), Server.playerHandler.players[npcs[i].spawnedBy].getX(), Server.playerHandler.players[npcs[i].spawnedBy].getY(), 10)) {
+					|| Server.playerHandler.players[npcs[i].spawnedBy].respawnTimer > 0) {
+					//|| !Server.playerHandler.players[npcs[i].spawnedBy].goodDistance(npcs[i].getX(), npcs[i].getY(), Server.playerHandler.players[npcs[i].spawnedBy].getX(), Server.playerHandler.players[npcs[i].spawnedBy].getY(), 10)) {
 							
 						if(Server.playerHandler.players[npcs[i].spawnedBy] != null) {
 							for(int o = 0; o < Server.playerHandler.players[npcs[i].spawnedBy].barrowsNpcs.length; o++){
@@ -2370,27 +2370,32 @@ npcs[i].summon = false;
 	}
 
 	private void killedSurvival(int i) {
-		@SuppressWarnings("static-access")
-		final Client c2 = (Client)Server.playerHandler.players[npcs[i].spawnedBy];
-		c2.survivalKilled++;
-		System.out.println("To kill: " + c2.survivalToKill + " killed: " + c2.survivalKilled);
-		if (c2.survivalKilled == c2.survivalToKill) {
-			c2.survivalPoints += Server.survival.getPoints(c2.waveID, c2);
-			c2.hasCollected = true;
-			//c2.sendMessage("STARTING EVENT");
-			c2.waveID++;
-			System.out.println("Wave id: " + c2.waveID);
-			EventManager.getSingleton().addEvent(new Event() {
+		//check if npc was spawned by a player
+		if(npcs[i].spawnedBy > 0) {
+		  @SuppressWarnings("static-access")
+		  final Client c2 = (Client)Server.playerHandler.players[npcs[i].spawnedBy];
+		  //check if the client exists and is in survival
+		  if(c2 != null && c2.inSurvival) {
+			c2.survivalKilled++;
+			System.out.println("To kill: " + c2.survivalToKill + " killed: " + c2.survivalKilled);
+			if (c2.survivalKilled == c2.survivalToKill) {
+			  c2.survivalPoints += Server.survival.getPoints(c2.waveID, c2);
+			  c2.hasCollected = true;
+			  //c2.sendMessage("STARTING EVENT");
+			  c2.waveID++;
+			  System.out.println("Wave id: " + c2.waveID);
+			  EventManager.getSingleton().addEvent(new Event() {
 				public void execute(EventContainer c) {
-					if (c2 != null) {
-						Server.survival.spawnWave(c2);
-					}	
-					c.stop();
+				  if (c2 != null) {
+					Server.survival.spawnWave(c2);
+				  }  
+				  c.stop();
 				}
-			}, 7500);
-			
+			  }, 7500);
+			}
+		  }
 		}
-	}
+	  }
 
 	@SuppressWarnings("unused")
 	private void killedRFD(int i) {

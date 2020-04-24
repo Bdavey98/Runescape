@@ -269,7 +269,7 @@ public class ObjectManager {
 	
 
 		// waiting room useful
-		c.getPA().checkObjectSpawn(409, 2753, 9635, 3, 10); // altar
+		c.getPA().checkObjectSpawn(409, 2746, 9635, 1, 10); // altar
 		c.getPA().checkObjectSpawn(4483, 2753, 9638, 3, 10); // bank chest
 
 
