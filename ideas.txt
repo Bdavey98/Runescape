@@ -1,0 +1,18 @@
+location x: 2372 y: 4949
+energy barrier 10820
+magic portal 2156
+
+for weps with specs:
+case ID: CombatAssistant
+		checkSpecAmount
+		activateSpecial
+	ItemAssistant
+		addSpecialBar
+
+depending on name, might need to check item name into 
+	ItemAssistant
+		sendWeapon
+
+to make item not stackable, go to bottom of
+	Item.java
+add to list of itemStackable
