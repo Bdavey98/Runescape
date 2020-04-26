@@ -8,7 +8,6 @@ mod maxime.txt
 dae.txt
 
 # ignore class files
-*.class
 Acheron Client/2. Compile.bat
 Acheron Client/3. Run.bat
 Acheron Client/sign/singlink Compiler.bat
