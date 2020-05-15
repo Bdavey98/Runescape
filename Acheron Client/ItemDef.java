@@ -46,35 +46,39 @@ case 5733:
                 itemDef.description = "A powerful staff object.";
                 itemDef.itemActions = new String[5];
                 itemDef.itemActions[3] = "Open Menu";
-        break;
+		break;
+	
+// start of survival items		
 
+// all values pertaining to the tier 2 survival sword
 case 905:
 	itemDef.name = "Tier 2 Sword";
 	itemDef.description = "A sword from Survival";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Wield";
-	itemDef.modelid = 71770;
-	itemDef.modelRotationX = 1958;
+	itemDef.modelid = 71770; // sgs model
+	itemDef.modelRotationX = 1958; // next few are for in inventory image
 	itemDef.modelRotationY = 222;
-	itemDef.modelZoom = 2050;
-	itemDef.anInt165 = 72130;
-	itemDef.anInt200 = 72130;
+	itemDef.modelZoom = 2050; 
+	itemDef.anInt165 = 72130; // male model
+	itemDef.anInt200 = 72130; // female model
 	itemDef.modelOffset1 = 0;
 	itemDef.modelOffset2 = -28;
 	itemDef.stackable = false;
 break;
-	
+
+// all values pertaining to the tier 1 platebody
 case 911:
 	itemDef.name = "Tier 1 platebody";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Equip";
-	itemDef.modelid = 3375;
-	itemDef.anInt165 = 3379;
+	itemDef.modelid = 3375; // normal metal platebody model
+	itemDef.anInt165 = 3379; // male model
 	itemDef.anInt164 = 344;
 	itemDef.anInt188 = 164;
-	itemDef.anInt200 = 468;
-	itemDef.editedModelColor = new int[3];
-	itemDef.newModelColor = new int[3];
+	itemDef.anInt200 = 468; // female model
+	itemDef.editedModelColor = new int[3]; // colors to change where [x] is number of colors
+	itemDef.newModelColor = new int[3]; // colors to change to
 	itemDef.editedModelColor[0] = 61;
 	itemDef.editedModelColor[1] = 41;
 	itemDef.editedModelColor[2] = 57;
@@ -83,19 +87,20 @@ case 911:
 	itemDef.newModelColor[2] = 0xFFFF;
 break;
 
+// all values pertaining to the tier 1 helmet
 case 910:
 	itemDef.name = "Tier 1 helm";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Equip";
-	itemDef.modelid = 2813;
-	itemDef.anInt165 = 218;
-	itemDef.anInt200 = 394;
+	itemDef.modelid = 2813; // normal metal helmet model
+	itemDef.anInt165 = 218; // male model
+	itemDef.anInt200 = 394; // female model
 	itemDef.modelOffset1 = -1;
 	itemDef.modelOffset2 = 6;
 	itemDef.modelRotationX = 1985;
 	itemDef.modelRotationY = 228;
-	itemDef.editedModelColor = new int[2];
-	itemDef.newModelColor = new int[2];
+	itemDef.editedModelColor = new int[2]; // colors to change where [x] is number of colors
+	itemDef.newModelColor = new int[2]; // colors to change to
 	itemDef.editedModelColor[0] = 61;
 	itemDef.editedModelColor[1] = 926;
 	itemDef.newModelColor[0] = 0x0001;
@@ -103,19 +108,20 @@ case 910:
 	itemDef.modelZoom = 950;
 break;
 
+// all values pertaining to the tier 1 platelegs
 case 912:
 	itemDef.name = "Tier 1 platelegs";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Equip";
-	itemDef.modelid = 2582;
-	itemDef.anInt165 = 268;
-	itemDef.anInt200 = 432;
+	itemDef.modelid = 2582; // normal metal plateleg model
+	itemDef.anInt165 = 268; // male model
+	itemDef.anInt200 = 432; // female model
 	itemDef.modelOffset1 = -1;
 	itemDef.modelOffset2 = 6;
 	itemDef.modelRotationX = 1985;
 	itemDef.modelRotationY = 228;
-	itemDef.editedModelColor = new int[3];
-	itemDef.newModelColor = new int[3];
+	itemDef.editedModelColor = new int[3]; // colors to change where [x] is number of colors
+	itemDef.newModelColor = new int[3]; // colors to change to
 	itemDef.editedModelColor[0] = 61;
 	itemDef.editedModelColor[1] = 41;
 	itemDef.editedModelColor[2] = 57;
@@ -125,17 +131,18 @@ case 912:
 	itemDef.modelZoom = 1540;
 break;
 
+// all values pertaining to the tier 2 platebody
 case 924:
 	itemDef.name = "Tier 2 platebody";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Equip";
-	itemDef.modelid = 3375;
-	itemDef.anInt165 = 3379;
-	itemDef.anInt164 = 344;
+	itemDef.modelid = 3375; // normal metal platebody model
+	itemDef.anInt165 = 3379; // male model
+	itemDef.anInt164 = 344; // female model
 	itemDef.anInt188 = 164;
 	itemDef.anInt200 = 468;
-	itemDef.editedModelColor = new int[3];
-	itemDef.newModelColor = new int[3];
+	itemDef.editedModelColor = new int[3]; // colors to change where [x] is number of colors
+	itemDef.newModelColor = new int[3]; // colors to change to
 	itemDef.editedModelColor[0] = 61;
 	itemDef.editedModelColor[1] = 41;
 	itemDef.editedModelColor[2] = 57;
@@ -144,19 +151,20 @@ case 924:
 	itemDef.newModelColor[2] = 0x000F;
 break;
 
+// all values pertaining to the tier 2 helmet
 case 923:
 	itemDef.name = "Tier 2 helm";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Equip";
-	itemDef.modelid = 2813;
-	itemDef.anInt165 = 218;
-	itemDef.anInt200 = 394;
+	itemDef.modelid = 2813; // normal metal helmet model
+	itemDef.anInt165 = 218; // male model
+	itemDef.anInt200 = 394; // female model
 	itemDef.modelOffset1 = -1;
 	itemDef.modelOffset2 = 6;
 	itemDef.modelRotationX = 100;
 	itemDef.modelRotationY = 50;
-	itemDef.editedModelColor = new int[2];
-	itemDef.newModelColor = new int[2];
+	itemDef.editedModelColor = new int[2]; // colors to change where [x] is number of colors
+	itemDef.newModelColor = new int[2]; // colors to change to
 	itemDef.editedModelColor[0] = 61;
 	itemDef.editedModelColor[1] = 926;
 	itemDef.newModelColor[0] = 0xABCD1FA9;
@@ -164,21 +172,22 @@ case 923:
 	itemDef.modelZoom = 750;
 break;
 
+// all values pertaining to the tier 2 platelegs
 case 925:
 	itemDef.name = "Tier 2 platelegs";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Equip";
-	itemDef.modelid = 2582;
-	itemDef.anInt165 = 268;
-	itemDef.anInt200 = 432;
+	itemDef.modelid = 2582; // normal metal plateleg model
+	itemDef.anInt165 = 268; // male model
+	itemDef.anInt200 = 432; // female model
 	itemDef.modelOffset1 = -1;
 	itemDef.modelOffset2 = 6;
 	itemDef.modelRotationX = 1985;
 	itemDef.modelRotationY = 228;
 	itemDef.modelRotationX = 1958;
 	itemDef.modelRotationY = 222;
-	itemDef.editedModelColor = new int[3];
-	itemDef.newModelColor = new int[3];
+	itemDef.editedModelColor = new int[3]; // colors to change where [x] is number of colors
+	itemDef.newModelColor = new int[3]; // colors to change to
 	itemDef.editedModelColor[0] = 61;
 	itemDef.editedModelColor[1] = 41;
 	itemDef.editedModelColor[2] = 57;
@@ -188,29 +197,30 @@ case 925:
 	itemDef.modelZoom = 1540;
 break;
 
+// all values pertaining to the tier 1 whip
 case 907:
 	itemDef.name = "Tier 1 whip";
 	itemDef.itemActions = new String[5];
 	itemDef.itemActions[1] = "Wield";
-	itemDef.modelid = 5412;
+	itemDef.modelid = 5412; // model ID of the whip
 	itemDef.modelRotationX = 1985;
 	itemDef.modelRotationY = 228;
-	itemDef.anInt165 = 5409;
-	itemDef.anInt200 = 5409;
+	itemDef.anInt165 = 5409; // male model
+	itemDef.anInt200 = 5409; // female model
 	itemDef.modelZoom = 840;
 	itemDef.modelOffset1 = -2;
 	itemDef.modelOffset2 = 56;
-	itemDef.editedModelColor = new int[3];
-	itemDef.newModelColor = new int[3];
+	// recolor doesn't work. editedModelColor values must be incorrect
+	itemDef.editedModelColor = new int[3]; // colors to change where [x] is number of colors
+	itemDef.newModelColor = new int[3];// colors to change to
 	itemDef.editedModelColor[0] = 16;
 	itemDef.editedModelColor[1] = 528;
 	itemDef.editedModelColor[2] = 0;
-	//itemDef.editedModelColor[3] = 11200;
 	itemDef.newModelColor[0] = 0;
 	itemDef.newModelColor[1] = 5652;
 	itemDef.newModelColor[2] = 7050;
-	//itemDef.newModelColor[3] = 796;
 break;
+// end of survival items
 
 case 11698:
 itemDef.name = "Saradomin godsword";

@@ -507,17 +507,7 @@ mChapsLeft = 1000;
 				}, 10000);
 	}
 
-	public void waveSpawn() {
-		//getPA().movePlayer(absX, absY, playerId * 4);
-		getDH().sendDialogues(41, 2618);
-		EventManager.getSingleton().addEvent(new Event() {
-			@SuppressWarnings("static-access")
-			public void execute(EventContainer c) {
-				Server.survival.spawnWave((Client)Server.playerHandler.players[playerId]);
-				c.stop();
-			}
-			}, 10000);
-}
+
 		/*	public void handCannonDestory() {
 		cannonTimer = 0;
 		int chance = playerLevel[playerFiremaking] * 5 + 25;
@@ -577,6 +567,17 @@ mChapsLeft = 1000;
 		}, 25);
 	}
 	
+	public void waveSpawn() {
+		getDH().sendDialogues(41, 2618);
+		EventManager.getSingleton().addEvent(new Event() {
+			@SuppressWarnings("static-access")
+			public void execute(EventContainer c) {
+				Server.survival.spawnWave((Client)Server.playerHandler.players[playerId]);
+				c.stop();
+			}
+			}, 10000);
+}
+
 		public void clearQInterface() {
 		for(int iD = 29172; iD <= 29264;iD++){
 			getPA().sendFrame126("", iD);

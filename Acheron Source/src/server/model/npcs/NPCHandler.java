@@ -33,6 +33,43 @@ public class NPCHandler {
 		loadAutoSpawn("./Data/CFG/spawn-config.cfg");
 	}
 	
+		// returns true if input number is one of the enemies in the survival minigame
+	// is used to increment survivalKilled when enemy is killed inside of survival
+	public boolean isSurvivalNpc(int i){
+		switch (npcs[i].npcType) {
+			case 1265:
+			case 74:
+			case 75:
+			case 1153:
+			case 76:
+			case 63:
+			case 1218:
+			case 1633:
+			case 1587:
+			case 111:
+			case 93:
+			case 1616:
+			case 1637:
+			case 1582:
+			case 1198:
+			case 1961:
+			case 1565:
+			case 1624:
+			case 1558:
+			case 2455:
+			case 1615:
+			case 2591:
+			case 2604:
+			case 2614:
+			case 2030:
+			case 2026:
+			case 1460:
+			case 1157:
+			case 84:
+			return true;
+		}
+		return false;
+	}
 	
 public void Summon(Client c, int npcType, int x, int y, int heightLevel, int WalkingType, int HP, int maxHit, boolean attackPlayer, int attack, int defence) {
 	
@@ -478,41 +515,6 @@ newNPC.npcslot = slot;
 		return false;
 	}
 
-	public boolean isSurvivalNpc(int i){
-		switch (npcs[i].npcType) {
-			case 1265:
-			case 74:
-			case 75:
-			case 1153:
-			case 76:
-			case 63:
-			case 1218:
-			case 1633:
-			case 1587:
-			case 111:
-			case 93:
-			case 1616:
-			case 1637:
-			case 1582:
-			case 1198:
-			case 1961:
-			case 1565:
-			case 1624:
-			case 1558:
-			case 2455:
-			case 1615:
-			case 2591:
-			case 2604:
-			case 2614:
-			case 2030:
-			case 2026:
-			case 1460:
-			case 1157:
-			case 84:
-			return true;
-		}
-		return false;
-	}
 
 	public boolean isRFDNpc(int i) {
 		switch (npcs[i].npcType) {
@@ -705,7 +707,7 @@ case 10775:
 return 13151;
 
 case 2037:
-				return 5485;
+return 5485;
 				
 case 6797:
 return 8104;
@@ -2281,6 +2283,36 @@ npcs[i].summon = false;
 		return true;
 	}
 	   
+	// when in survival and you kill an enemy, increment survivalKilled until you have killed 
+	// as many enemies as there are in the wave
+	// when killed them all, spawn next wave
+	private void killedSurvival(int i) {
+		//check if npc was spawned by a player
+		if(npcs[i].spawnedBy > 0) {
+		  @SuppressWarnings("static-access")
+		  final Client c2 = (Client)Server.playerHandler.players[npcs[i].spawnedBy];
+		  //check if the client exists and is in survival
+		  if(c2 != null && c2.inSurvival) {
+			c2.survivalKilled++;
+			System.out.println("To kill: " + c2.survivalToKill + " killed: " + c2.survivalKilled);
+			if (c2.survivalKilled == c2.survivalToKill) {
+			  c2.survivalPoints += Server.survival.getPoints(c2.waveID, c2);
+			  c2.hasCollected = true;
+			  c2.waveID++;
+			  System.out.println("Wave id: " + c2.waveID);
+			  EventManager.getSingleton().addEvent(new Event() {
+				public void execute(EventContainer c) {
+				  if (c2 != null) {
+					Server.survival.spawnWave(c2);
+				  }  
+				  c.stop();
+				}
+			  }, 7500);
+			}
+		  }
+		}
+	  }
+
 	public boolean multiAttacks(int i) {
 		switch (npcs[i].npcType) {
 			case 6222://bandos?
@@ -2369,33 +2401,6 @@ npcs[i].summon = false;
 		}
 	}
 
-	private void killedSurvival(int i) {
-		//check if npc was spawned by a player
-		if(npcs[i].spawnedBy > 0) {
-		  @SuppressWarnings("static-access")
-		  final Client c2 = (Client)Server.playerHandler.players[npcs[i].spawnedBy];
-		  //check if the client exists and is in survival
-		  if(c2 != null && c2.inSurvival) {
-			c2.survivalKilled++;
-			System.out.println("To kill: " + c2.survivalToKill + " killed: " + c2.survivalKilled);
-			if (c2.survivalKilled == c2.survivalToKill) {
-			  c2.survivalPoints += Server.survival.getPoints(c2.waveID, c2);
-			  c2.hasCollected = true;
-			  //c2.sendMessage("STARTING EVENT");
-			  c2.waveID++;
-			  System.out.println("Wave id: " + c2.waveID);
-			  EventManager.getSingleton().addEvent(new Event() {
-				public void execute(EventContainer c) {
-				  if (c2 != null) {
-					Server.survival.spawnWave(c2);
-				  }  
-				  c.stop();
-				}
-			  }, 7500);
-			}
-		  }
-		}
-	  }
 
 	@SuppressWarnings("unused")
 	private void killedRFD(int i) {

@@ -73,40 +73,6 @@ public class FightPits {
 	}
 		
 	
-//		int displayTime = gameStartTimer;
-//		//System.out.println("time: " + gameStartTimer);
-//			for (int j = 0; j < Server.playerHandler.players.length; j++) {
-//				if (Server.playerHandler.players[j] != null) {
-//					Client c = (Client) Server.playerHandler.players[j];
-//					if (c.getPA().inPitsWait() || c.inPits) {
-//						c.getPA().sendFrame126("Survival", 15894);
-//						c.getPA().sendFrame126("Next Game In: " + displayTime + " seconds", 15895);
-//						c.getPA().sendFrame126("Current Points: " + c.survivalPoints, 15897);
-//						//c.getPA().sendFrame126("(Need 1 to 25 players)", 21008);
-//						//c.getPA().sendFrame126("Points: " + c.pcPoints + "", 21009);
-//						//c.getPA().sendQuest("Survival", 15894);
-////						if (!gameOn) {
-////								c.getPA().sendQuest("Next Game In : " + displayTime + " seconds.", 15895);
-////						} else {
-////							c.getPA().sendQuest("Game in progress", 15895);
-////						}
-////						c.getPA().sendQuest("Current Points:" + c.survivalPoints, 15897);
-//						c.getPA().sendQuest("Foes Remaining: " + mobsRemaining, 15898);
-//						c.getPA().sendQuest("", 15899);
-//						c.getPA().sendQuest("", 15896);
-//						c.getPA().sendQuest("", 15900);
-//						c.getPA().sendQuest("", 15901);
-//						c.getPA().sendQuest("", 15902);
-//						c.getPA().sendQuest("", 15903);
-//						c.getPA().sendQuest("", 15904);
-//						c.getPA().sendQuest("", 15905);
-//						c.getPA().sendQuest("", 15906);
-//						c.getPA().walkableInterface(15892);
-//
-//					}
-//				}
-//			}
-//	}
 
 	@SuppressWarnings("static-access")
 	public void startGame() {

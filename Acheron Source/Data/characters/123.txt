@@ -1,6 +1,6 @@
 [ACCOUNT]
-character-username = 1234
-character-password = 1234
+character-username = 123
+character-password = 123
 connected-from = 127.0.0.1
 
 [CHARACTER]
@@ -12,23 +12,23 @@ Jailed = false
 Black-marks = 0
 
 [POSITIONS]
-character-posx = 2749
-character-posy = 9638
+character-posx = 2750
+character-posy = 9637
 character-height = 0
 
 [POINTS]
 Credits = 0
-SPoints = 75
+SPoints = 0
 pc-points = 0
 pk-points = 0
 dungPoints = 0
 magePoints = 0
 votingPoints = 0
-survivalPoints = 348
+survivalPoints = 95401
 
 [KILL AND DEATH]
-KC = 9
-DC = 9
+KC = 6
+DC = 6
 
 [BOSSES]
 Arma-KC = 0
@@ -71,7 +71,7 @@ gwdelay = 0
 summonSpec0
 dungRest =0
 Altar = 0
-slayerTask = -1
+slayerTask = 0
 xpLock = false
 taskAmount = 0
 totalstored = 0
@@ -86,24 +86,24 @@ wave = 0
 dfs-charges = 0
 lastsummon = 0
 summoningnpcid = 0
-fightMode = 0
+fightMode = 1
 void = 0	0	0	0	0
 
 [EQUIPMENT]
-character-equip = 0	910	1	
-character-equip = 1	1052	1	
-character-equip = 2	1725	1	
-character-equip = 3	907	1	
-character-equip = 4	911	1	
-character-equip = 5	-1	1	
+character-equip = 0	3751	1	
+character-equip = 1	-1	1	
+character-equip = 2	-1	1	
+character-equip = 3	4587	1	
+character-equip = 4	1127	1	
+character-equip = 5	1201	1	
 character-equip = 6	-1	0	
-character-equip = 7	912	1	
+character-equip = 7	1079	1	
 character-equip = 8	-1	0	
 character-equip = 9	-1	1	
 character-equip = 10	3105	1	
 character-equip = 11	-1	0	
 character-equip = 12	-1	1	
-character-equip = 13	-1	0	
+character-equip = 13	-1	499	
 
 [LOOK]
 character-look = 0	0
@@ -121,12 +121,12 @@ character-look = 11	0
 character-look = 12	0
 
 [SKILLS]
-character-skill = 0	79	1853050
-character-skill = 1	66	506350
-character-skill = 2	73	997600
-character-skill = 3	74	1119798
+character-skill = 0	60	297600
+character-skill = 1	58	238500
+character-skill = 2	62	340550
+character-skill = 3	60	292356
 character-skill = 4	1	0
-character-skill = 5	52	131370
+character-skill = 5	43	52710
 character-skill = 6	1	0
 character-skill = 7	1	0
 character-skill = 8	1	0
@@ -138,8 +138,8 @@ character-skill = 13	1	0
 character-skill = 14	1	0
 character-skill = 15	1	0
 character-skill = 16	1	0
-character-skill = 17	1	0
-character-skill = 18	62	365480
+character-skill = 17	4	320
+character-skill = 18	1	0
 character-skill = 19	1	0
 character-skill = 20	1	0
 character-skill = 21	1	0
@@ -148,6 +148,14 @@ character-skill = 23	1	0
 character-skill = 24	1	0
 
 [ITEMS]
+character-item = 0	908	1
+character-item = 1	911	1
+character-item = 2	912	1
+character-item = 3	913	1
+character-item = 4	906	1
+character-item = 5	924	1
+character-item = 6	925	1
+character-item = 7	926	1
 
 [BANK]
 character-bank = 0	555	1000
@@ -157,26 +165,20 @@ character-bank = 3	559	1000
 character-bank = 4	561	1000
 character-bank = 5	566	1000
 character-bank = 6	842	1
-character-bank = 7	883	500
-character-bank = 8	392	500
-character-bank = 9	380	1487
-character-bank = 10	6909	1
-character-bank = 11	146	15
-character-bank = 12	158	15
-character-bank = 13	3752	2
-character-bank = 14	1324	1
-character-bank = 15	1154	1
-character-bank = 16	1068	1
-character-bank = 17	3843	1
-character-bank = 18	1116	1
-character-bank = 19	996	4416406
-character-bank = 20	533	22
-character-bank = 21	1080	1
-character-bank = 22	1128	1
-character-bank = 23	5699	1
-character-bank = 24	4588	1
-character-bank = 25	10829	1
-character-bank = 26	1202	1
+character-bank = 7	392	500
+character-bank = 8	380	1456
+character-bank = 9	6909	1
+character-bank = 10	146	15
+character-bank = 11	158	15
+character-bank = 12	883	500
+character-bank = 13	1324	1
+character-bank = 14	996	13549522
+character-bank = 15	10829	1
+character-bank = 16	1116	1
+character-bank = 17	1068	1
+character-bank = 18	1154	1
+character-bank = 19	4122	1
+character-bank = 20	3843	1
 
 [FRIENDS]
 

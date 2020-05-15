@@ -3256,6 +3256,7 @@ break;
 				c.hitDelay = getHitDelay(c.getItems().getItemName(c.playerEquipment[c.playerWeapon]).toLowerCase());
 			break;
 			
+			// gets special attack information for tier 2 survival sword
 			case 905:
 				c.startAnimation(7071);
 				c.gfx0(1220);

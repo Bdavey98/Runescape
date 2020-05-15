@@ -6,24 +6,28 @@ import server.Server;
 
 public class Survival {
 	public int npc;
+	// First dimension is number of waves, second dimension is IDs that will spawn in the wave
 	private final int[][] easyWAVES = { { 1265, 1265, 1265, 1265, 1265 }, { 74, 74, 74, 74, 74 },
 			{ 75, 75, 75, 75, 75 }, { 1153, 1153, 1153, 1153, 1153 }, { 76, 76, 76, 76, 76 }, 
 			{ 63, 63, 63, 63, 63 }, { 1218, 1218, 1218, 1218, 1218 }, { 1633, 1633, 1633, 1633, 1633 }, 
 			{ 1587, 1587, 1587, 1587, 1587 }, { 111, 111, 111, 111, 111 } };
-
+	// First dimension is number of waves, second dimension is IDs that will spawn in the wave
 	private final int[][] mediumWAVES = { { 1587, 1587, 1587, 1587, 1587 }, { 93, 93, 93, 93, 93 }, 
 			{ 111, 111, 111, 111, 111}, { 1616, 1616, 1616, 1616, 1616 }, { 1637, 1637, 1637, 1637, 1637 }, 
 			{ 1582, 1582, 1582, 1582, 1582 }, { 1624, 1624, 1624, 1624, 1624 }, { 1558, 1558, 1558, 1558, 1558 },
 			{ 1961, 1961, 1961, 1961, 1961 }, { 1565, 1565, 1565, 1565, 1565 } };
-
+	// First dimension is number of waves, second dimension is IDs that will spawn in the wave
 	private final int[][] hardWAVES = { { 2455, 2455, 2455, 2455, 2455 }, { 1615, 1615, 1615, 1615, 1615 },
 			{2591, 2591, 2591, 2591, 2591}, {2604, 2604, 2604, 2604, 2604 }, {2614, 2614, 2614, 2614, 2614 },
 			{2030, 2030, 2030, 2030, 2030 }, {2026, 2026, 2026, 2026, 2026 }, {1460, 1460, 1460, 1460, 1460 },
 			{1157, 1157, 1157, 1157, 1157 }, {84, 84, 84, 84, 84 } };
-
+	// First dimension is number of spawn locations there are to be. THERE MUST BE AT LEAST AS MANY SPAWN LOCATIONS
+	// AS THERE ARE MOBS IN A WAVE
+	// second dimension has x,y coordinates for world location
 	private int[][] coordinates = { { 2772, 9630 }, { 2762, 9637 }, { 2767, 9638 }, { 2763, 9629 }, { 2772, 9634 } };
 
-	// 2743 = 360, 2627 = 22, 2630 = 45, 2631 = 90, 2741 = 180
+	// Param Client C - which client to do things for
+	// post-condition - Player will be moved into the survival area and waves will start. Transported back out when completed
 	public void spawnWave(Client c) {
 
 		if (c.inSurvival) {
@@ -39,6 +43,7 @@ public class Survival {
 					return;
 				}
 				int npcAmount = easyWAVES[c.waveID].length;
+				// loops over enemy list to get information based on difficulty
 				for (int j = 0; j < npcAmount-1; j++) {
 					if(c.inEasySurvival){
 						npc = easyWAVES[c.waveID][j];
@@ -49,7 +54,7 @@ public class Survival {
 					}
 					int X = coordinates[j][0];
 					int Y = coordinates[j][1];
-					int H = c.heightLevel;
+					int H = c.heightLevel; // height is height level of player
 					int hp = getHp(npc);
 					int max = getMax(npc);
 					int atk = getAtk(npc);
@@ -58,6 +63,7 @@ public class Survival {
 						break;
 					Server.npcHandler.spawnNpc(c, npc, X, Y, H, 1, hp, max, atk, def, true, false);
 				}
+				// repeat section that gets the boss version of the enemy each wave
 				if(c.inEasySurvival){
 					npc = easyWAVES[c.waveID][0];
 					} else if(c.inMediumSurvival){
@@ -79,6 +85,10 @@ public class Survival {
 		}
 	}
 
+	// Param Client C - which client to do things for
+	// post-conditions - client gets teleported back to main room
+	//		booleans are reset
+	//		points are awarded based on wave reached
 	public void endSurvival(Client c){
 		String difficultyString = difficulty(c);
 		c.sendMessage("You have completed survival on " + difficultyString
@@ -91,6 +101,7 @@ public class Survival {
 		c.getPA().movePlayer(2750,9638,0);
 	}
 
+	// returns string based on which difficulty boolean is set
 	public String difficulty(Client c){
 		if(c.inEasySurvival)
 			return "easy";
@@ -100,6 +111,9 @@ public class Survival {
 			return "hard";
 		return "null";
 	}
+
+	// param - int wave where wave is given from client survivalWave field
+	// gets which wave the player is on so that points can be awarded accordingly
 	public int getPoints(int wave, Client c){
 		switch(wave) {
 			case 0:
@@ -135,6 +149,7 @@ public class Survival {
 		return 0;
 	}
 
+	// returns health based on input mob ID
 	public int getHp(int npc) {
 		switch (npc) {
 			case 1265:
@@ -197,6 +212,7 @@ public class Survival {
 		return 1;
 	}
 
+	// returns max hit based on input mob ID
 	public int getMax(int npc) {
 		switch (npc) {
 			case 1265:
@@ -254,6 +270,7 @@ public class Survival {
 		return 5;
 	}
 
+	// returns attack level based on input mob ID
 	public int getAtk(int npc) {
 		switch (npc) {
 			case 1265:
@@ -316,6 +333,7 @@ public class Survival {
 		return 100;
 	}
 
+	// returns defense level based on input mob ID
 	public int getDef(int npc) {
 		switch (npc) {
 			case 1265:

@@ -1189,8 +1189,11 @@ break;
 			Server.objectManager.startObelisk(objectType);
 		break;
 
-				// start of survival objects
+		// start of survival objects
 
+		// easy survival portal - can only be entered every 10 seconds
+		// sets booleans for inSurvival and in easy
+		// moves player to survival area and starts waves
 		case 13623:
 		if (System.currentTimeMillis() - c.lastEntrance < 10000) { // permit entrance every 10 sec
 			c.sendMessage("Please wait 10 seconds before re-entering.");
@@ -1207,6 +1210,9 @@ break;
 			//Server.castleWars.joinWait(c,1);
 		break;
 		
+		// medium survival portal - can only be entered every 10 seconds
+		// sets booleans for inSurvival and in medium
+		// moves player to survival area and starts waves
 		case 13624:
 		if (System.currentTimeMillis() - c.lastEntrance < 10000) { // permit entrance every 10 sec
 			c.sendMessage("Please wait 10 seconds before reentering.");
@@ -1223,6 +1229,9 @@ break;
 		}
 		break;
 
+		// hard survival portal - can only be entered every 10 seconds
+		// sets booleans for inSurvival and in hard
+		// moves player to survival area and starts waves
 		case 13626:
 		if (System.currentTimeMillis() - c.lastEntrance < 10000) { // permit entrance every 10 sec
 			c.sendMessage("Please wait 10 seconds before reentering.");
@@ -1238,6 +1247,10 @@ break;
 		}		
 		break;
 
+		// portal to leave survival
+		// resets survival booleans back to false
+		// awards points based on enemies killed in that wave
+		// moves player back to main area
 		case 13618:
 			c.getPA().resetSurvival();
 			if(!c.hasCollected)
@@ -2394,6 +2407,9 @@ break;
 			// end of butterfly's
 
 			// survival
+			// healer - heals every 10 minutes, but can restore special attack at any time
+			// if player has over max hp, will drain it back to their hp level
+			// if player is at full hp, does not effect 10 minute timer
 			case 2588:
 				c.specAmount = 10.0;
 				if (System.currentTimeMillis() - c.lastHeal < 600000) { // permit healing every 10 min
@@ -2520,6 +2536,7 @@ break;
 				c.getShops().openShop(14);
 				break;
 
+			// survival shop keeper - opens shop and displays your points in chat
 			case 1699:
 				c.getShops().openShop(91);
 				c.sendMessage("You currently have " + c.survivalPoints + " survival points." );
