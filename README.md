@@ -43,7 +43,9 @@ inside of Runescape/Acheron Client/sign
 javac signlink.java
 ```
 
-You can log in with any username and password other than the ones listed below. Any new character made will not spawn at the minigame. You must click what looks like a spellbook on the very right edge of the screen about halfway down. From there, click the only spell that is not grayed out. It is the first spell. It will teleport you to the survival area.
+## Logging in
+
+You can log in with any username and password. Any new character made will not spawn at the minigame. You must click what looks like a spellbook on the very right edge of the screen about halfway down. From there, click the only spell that is not grayed out. It is the first spell. It will teleport you to the survival area.
 
 There are 3 accounts premade to see different aspect of the minigame. All 3 of the accounts have admin privilages and can use the command 
 ```
