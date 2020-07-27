@@ -65,7 +65,7 @@ Account3: has the second tier gear equipped, and can still die in hard if not pl
 username: 12345
 password: 12345
 
-My code is scattered a little bit of everywhere, but the bulk of it for the minigame itself is in this.
+My code is scattered across multiple classes, but the bulk of it for the minigame itself is in this.
 Everything in this file is my own code based on how they wrote their code previously, which is why there are large switch statements.
 ```
 Runescape\Acheron Source\src\server\model\minigames\Survival.java
