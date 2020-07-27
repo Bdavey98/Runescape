@@ -2,25 +2,7 @@
 
 As far as I know, this does not run on linux. I made an effort to get it working, but I was unable to progress very far. These steps are to make it compile and run on windows. There is also the cache for the client that has to be at the root of your (C:) drive. The cache is in the Runescape directory named acheron.cache The compilation must be done in cmd. I tested it in powershell and it did not work. There are also sometimes weird errors with the signlink that are discussed slightly further below, but if you have any issues compiling, let me know and I have ways around all of them. Definitely unfortunate, but I do not have enough experience with different devices to be able to really know upfront what to expect
 
-You can log in with any username and password other than the ones listed below. Any new character made will not spawn at the minigame. You must click what looks like a spellbook on the very right edge of the screen about halfway down. From there, click the only spell that is not grayed out. It is the first spell. It will teleport you to the survival area.
 
-There are 3 accounts premade to see different aspect of the minigame. All 3 of the accounts have admin privilages and can use the command 
-```
-::survival value
-```
-where value is any integer from 0 to max int. This command will give the player value number of survival points. Use to buy things from the shop to test it without playing for survival points.
-
-Account1: has decent stats that are high enough to make it most of the way through easy. This account is wearing gear that existed in the game already.
-username: 123
-password: 123
-
-Account 2: has high enough stats to wear the tier 1 armor set and weapon that I made, and is currently equipped with them.
-username: 1234
-password: 1234
-
-Account3: has the second tier gear equipped, and can still die in hard if not played correctly.
-username: 12345
-password: 12345
 
 ## Server Compilation
 Go to Runescape/Acheron Source and run this command in cmd. 
@@ -60,6 +42,26 @@ inside of Runescape/Acheron Client/sign
 ```
 javac signlink.java
 ```
+
+You can log in with any username and password other than the ones listed below. Any new character made will not spawn at the minigame. You must click what looks like a spellbook on the very right edge of the screen about halfway down. From there, click the only spell that is not grayed out. It is the first spell. It will teleport you to the survival area.
+
+There are 3 accounts premade to see different aspect of the minigame. All 3 of the accounts have admin privilages and can use the command 
+```
+::survival value
+```
+where value is any integer from 0 to max int. This command will give the player value number of survival points. Use to buy things from the shop to test it without playing for survival points.
+
+Account1: has decent stats that are high enough to make it most of the way through easy. This account is wearing gear that existed in the game already.
+username: 123
+password: 123
+
+Account 2: has high enough stats to wear the tier 1 armor set and weapon that I made, and is currently equipped with them.
+username: 1234
+password: 1234
+
+Account3: has the second tier gear equipped, and can still die in hard if not played correctly.
+username: 12345
+password: 12345
 
 My code is scattered a little bit of everywhere, but the bulk of it for the minigame itself is in this.
 Everything in this file is my own code based on how they wrote their code previously, which is why there are large switch statements.
